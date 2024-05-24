@@ -1,0 +1,61 @@
+/* Mobile View */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* Tablet View */
+@media (min-width: 772px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  figure {
+    border-radius: 50%;
+  }
+
+  figure:last-child {
+    grid-column: span 2;
+  }
+}
+
+/* Large Screen View */
+@media (min-width: 992px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  figure:nth-child(3n) {
+    grid-column: span 2;
+  }
+
+  figure {
+    border-radius: 0;
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .container figure {
+    background-color: #333;
+    color: #f0f0f0;
+    border-color: #000;
+  }
+}
